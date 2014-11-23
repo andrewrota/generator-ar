@@ -1,4 +1,13 @@
 'use strict';
+/**
+ *
+ * Much code and examples borrowed from:
+ *
+ * https://github.com/yeoman/generator
+ * https://github.com/yeoman/generator-backbone
+ * https://github.com/Snugug/generator-snugug
+ *
+ */
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
