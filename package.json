@@ -1,0 +1,15 @@
+{
+  "name": "generator-ar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "0.18.0",
+    "yosay": "~1.0.0",
+    "util": "~0.10.3",
+    "path": "~0.4.9"
+  }
+}
