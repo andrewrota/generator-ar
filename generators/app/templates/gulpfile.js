@@ -1,7 +1,7 @@
 'use strict';
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
+var sass = require('gulp-ruby-sass');
 var del = require('del');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
