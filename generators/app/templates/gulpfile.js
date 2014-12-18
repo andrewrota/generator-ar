@@ -18,11 +18,11 @@ require('jsx-loader');
 
 var paths = {
     html: ['src/**/*.html'],
-    scripts: ['src/js/*.js'],
+    scripts: ['src/js/**/*.js'],
     scriptInit: 'init.js',
     styles: ['src/sass/*.scss'],
     fonts: 'src/**/*.woff',
-    images: ['src/images/**/*.jpg', 'src/images/**/*.gif']
+    images: ['src/images/**/*.jpg', 'src/images/**/*.jpeg', 'src/images/**/*.gif', 'src/images/**/*.png', 'src/images/**/*.svg']
 };
 // webpack
 gulp.task('webpack', function() {
@@ -37,6 +37,11 @@ gulp.task('webpack', function() {
             loaders: [{
                 test: /\.js$/,
                 loader: 'jshint-loader',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.js$/,
+                loader: '6to5-loader',
                 exclude: /node_modules/
             }]
         },
@@ -72,13 +77,7 @@ gulp.task('fonts', function() {
 gulp.task('sass', function() {
     del(['dist/css']);
     return gulp.src(paths.styles)
-            .pipe(scsslint())
-            .pipe(sourcemaps.init())
             .pipe(sass())
-            .pipe(csslint())
-            .pipe(csslint.reporter())
-            .pipe(minifyCSS())
-            .pipe(sourcemaps.write('../maps'))
             .pipe(gulp.dest('dist/css/'));
 });
 
